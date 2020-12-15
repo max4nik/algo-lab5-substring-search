@@ -12,7 +12,8 @@ class KMPTest(unittest.TestCase):
         self.assertEqual([(0, 0), (1, 1), (2, 2)], main('test2'))
 
     def test_3(self):
-        self.assertEqual([], main('test3'))
+        with self.assertRaises(SystemExit):
+            main('test3')
 
     def test_4(self):
         self.assertEqual([(0, 3), (3, 6)], main('test4'))
